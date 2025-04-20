@@ -15,7 +15,7 @@ This project demonstrates how to build a personalized semantic search engine usi
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/RISHAL-GS/Major-Project>
 cd <your-repo-folder>
 ```
 
