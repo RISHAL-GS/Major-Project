@@ -3,9 +3,12 @@ from sentence_transformers import SentenceTransformer
 import pinecone 
 import numpy as np
 import uuid
-
+import os
 # Initialize Pinecone
-pinecone.init(api_key="pcsk_4Gqjyf_MpFsnmTaa7M9yNYPZnVoRYXPPmNev1mojR85EFt65UeASJ9BrXSrXrDGmDbegsi", environment="gcp-starter")  # or "us-west1-gcp" or check your Pinecone console
+pinecone.init(
+    api_key=os.getenv("PINECONE_API_KEY"),
+    environment=os.getenv("PINECONE_ENVIRONMENT")
+)
 index = pinecone.Index("sacred-oak")
 
 # Load the sentence transformer model once
@@ -53,5 +56,5 @@ def search(query, top_k=5):
         print("-" * 50)
 
 # === Example Usage ===
-add_dataset("gbharti/finance-alpaca")
-search("How do interest rates affect the stock market?")
+#add_dataset("gbharti/finance-alpaca")
+#search("How do interest rates affect the stock market?")
